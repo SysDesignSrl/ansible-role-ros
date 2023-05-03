@@ -54,16 +54,16 @@
     - "{{ (ros_distribution == 'noetic') | ternary('python3-rosinstall-generator','python-rosinstall-generator') }}"
     - "{{ (ros_distribution == 'noetic') | ternary('python3-wstool','python-wstool') }}"
     - "{{ (ros_distribution == 'noetic') | ternary('python3-catkin-tools','python-catkin-tools') }}"
-    - "python3-colcon-common-extensions"
+    # - "python3-colcon-common-extensions"
     - "python3-pip"
 
-- name: Install Colcon Bundle
-  pip:
-    name: "{{ packages }}"
-    executable: pip3
-    extra_args: -U
-  vars:
-    packages:
-    - colcon-ros-bundle
-  tags:
-    - pip3
+# - name: Install Colcon Bundle
+#   pip:
+#     name: "{{ packages }}"
+#     executable: pip3
+#     extra_args: -U
+#   vars:
+#     packages:
+#     - colcon-ros-bundle
+#   tags:
+#     - pip3
